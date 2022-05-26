@@ -1,0 +1,46 @@
+'''This is the pseudocode for the Random Agent Selector by Cael Shoop.'''
+
+import ktinker as tk # For UI
+
+
+class Window:
+    def init:
+        Create window
+        Check boxes listing all players
+        Buttons:
+        "Generate"
+        "Add Agent"
+        "Add Player"
+    def error popup:
+        Create error popup
+    def selected popup:
+        Create popup with selected agents listed
+    def success popup:
+        Create popup saying the action was successful
+
+
+Start tk
+Call window class to create window
+Set window title
+Show window
+
+User selects check boxes representing each person
+If none are selected, a popup that tells the user to select at least one player
+When the "Generate" button is pressed, start the selection process
+
+Recognize which boxes are checked
+Per player:
+Read in the available agents for each person from their .ini config files
+# Having the agents in .ini files makes it easy to update when a player
+# unlocks a new agent, by using the "Add Agent" button.
+Close files
+
+Per player:
+Choose a random number based on the number of agents
+Check if that agent is in the "selected" list
+If it is, restart and generate a new number
+If it is not, add the agent to the "selected" list
+# This prevents two players getting the same agent
+Save this info
+
+Generate popup with players and the agents selected for them.
